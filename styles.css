@@ -1,42 +1,51 @@
+/* COMPLETE CSS FLEXBOX LAYOUT WITH COMMENTS */
+
 *{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* Ensures padding/border included in width/height */
 }
+/* FULL SCREEN BLACK BACKGROUND*/
 body,.container{
-  min-height: 100vh;
+  min-height: 100vh;/* 100% viewport height minimum */
   background-color: black;
 }  
 .container{
   display: flex;
   flex-direction: column;
-  gap: 1em;
-  margin: 2em 5em;
+  gap: 1em;/* Uniform spacing between header/section/footer */
+  margin: 2em 5em;/* Top/bottom 2em, left/right 5em spacing from edges */
 }
+/* HEADER - Takes minimum space (flex: 1) */
 header{
-  flex: 1;
-  border-radius: 2em;
+  flex: 1;/* Grow/shrink equally, minimum size based on content */
+  border-radius: 2em;/* Rounded corners */
   background-color: purple;
 }
+/* SECTION - Takes 4x more space than header/footer (flex: 4) */
 section{
-  flex: 4;
+  flex: 4;/* 4x growth factor vs flex:1 elements */
   border-radius: 2em;;
-  display: flex;
-  gap: 1em;
+  display: flex;/* Nested flexbox for 2 columns */
+  gap: 1em;/* Space between left/right columns */
 }
+/* LEFT COLUMN - 3x wider than right column */
 .colleft{
   flex: 3;
   border-radius:2em;
   background-color: red;
 }
+/* RIGHT COLUMN - 1x narrow sidebar */
 .colright{
   flex: 1;
   border-radius: 2em;
   background-color: yellow;
 }
+/* SECOND CONTAINER MODIFIER - Reverses column order */
 .container.second section{
   flex-direction: row-reverse;
 }
+/* FOOTER - Minimum height, sticks to bottom */
 footer{
   flex: 1;
   background-color: darkblue;
